@@ -5,42 +5,51 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <title></title>
+        <title>Adobe SDK Sandbox</title>
 
-        <meta name="twitter:card" content="">
-        <meta name="twitter:site" content="">
-        <meta name="twitter:title" content="">
-        <meta name="twitter:description" content="">
-        <meta name="twitter:image:src" content="">
-
-        <meta property="og:title" content=""/>
-        <meta property="og:url" content=""/>
-        <meta property="og:image" content=""/>
-        <meta property="og:site_name" content=""/>
-        <meta property="og:description" content=""/>
-
-        <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="stylesheets/style.css">
-
-        <script src="js/vendor/modernizr.js"></script>
     </head>
     <body>
-        <header>
-        </header>
 
-        <main>
-        </main>
+        <div> </div>
 
-        <footer>
-        </footer>
+        <!-- Add an edit button, passing the HTML id of the image
+            and the public URL to the image -->
+        <a href="#" onclick="return launchEditor('editableimage1',
+            'img/field.jpeg');">Edit!</a>
 
-        <script>
-            // google analytics
-        </script>
+        <!-- original line of HTML here: -->
+        <img id="editableimage1" src="img/field.jpeg" height="500" width="700" />
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/vendor/jquery.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <script>
+
+
+            var featherEditor = new Aviary.Feather({
+                apiKey: clientSecret,
+                tools: ['draw', 'stickers'],
+                onSave: function(imageID, newURL) {
+                    console.log("saving");
+                    var img = document.getElementById(imageID);
+                    img.src = newURL;
+                    console.log(img);
+                }
+            });
+
+            function launchEditor(id, src) {
+                featherEditor.launch({
+                    image: id,
+                    url: src
+                });
+                return false;
+            }
+
+        </script>
+
+
     </body>
 </html>
