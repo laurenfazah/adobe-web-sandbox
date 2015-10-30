@@ -1,5 +1,7 @@
 # Adobe Web SDK Sandbox
 
+### quick demo hosted [here](http://adobe-creative-sdk.bitballoon.com/)
+
 ## prereqs
 1. get an apiKey from Adobe's [My Apps](https://creativesdk.adobe.com/myapps.html#) page
 
