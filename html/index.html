@@ -11,15 +11,17 @@
     </head>
     <body>
 
-        <div> </div>
+        <div class="canvas">
 
-        <!-- Add an edit button, passing the HTML id of the image
-            and the public URL to the image -->
-        <a href="#" onclick="return launchEditor('editableimage1',
-            'img/field.jpeg');">Edit!</a>
+            <img id="editableimage1" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-0.3.5&q=80&fm=jpg&s=ea7623efb1f5115a216e43130cf1f524" />
 
-        <!-- original line of HTML here: -->
-        <img id="editableimage1" src="img/field.jpeg" height="500" width="700" />
+            <!-- Add an edit button, passing the HTML id of the image
+                and the public URL to the image -->
+            <a href="#" onclick="return launchEditor('editableimage1',
+                'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-0.3.5&q=80&fm=jpg&s=ea7623efb1f5115a216e43130cf1f524');">Edit</a>
+
+
+        </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/js/vendor/jquery.js"><\/script>')</script>
@@ -28,15 +30,16 @@
 
         <script>
 
-
             var featherEditor = new Aviary.Feather({
                 apiKey: clientSecret,
-                tools: ['draw', 'stickers'],
                 onSave: function(imageID, newURL) {
                     console.log("saving");
                     var img = document.getElementById(imageID);
                     img.src = newURL;
                     console.log(img);
+                },
+                onError: function(errorObj){
+                    console.log(errorObj);
                 }
             });
 

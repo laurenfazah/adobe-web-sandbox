@@ -1,0 +1,26 @@
+.canvas {
+    padding-top: 10%;
+    height: 100vh;
+    background: $primary;
+    text-align: center;
+    img{
+        max-height: 60%;
+        width: auto;
+        max-width: 80%;
+        margin-bottom: 20px;
+        border: 10px $light solid;
+    }
+    a{
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        line-height: 40px;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-size: 14px;
+        background: $light;
+    }
+}
