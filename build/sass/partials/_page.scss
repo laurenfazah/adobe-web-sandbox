@@ -1,13 +1,24 @@
 body{
     background: $primary;
 }
+
 .canvas {
     padding-top: 10%;
-    min-height: 100vh;
+    min-height: 90vh;
     text-align: center;
     label{
         @extend %message;
         line-height: 26px;
+        overflow-x: scroll;
+        &::-webkit-scrollbar{
+            background-color:#fff;
+        }
+        &::-webkit-scrollbar-track {
+              background-color: #fff;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color:#fff;
+        }
         span{
             display: block;
             font-weight: 700;
@@ -15,6 +26,7 @@ body{
     }
     input{
         @extend %input;
+        max-width: 80%;
         padding: 10px;
         margin-bottom: 20px;
         border: none;
@@ -44,4 +56,10 @@ body{
     p{
         @extend %message;
     }
+}
+
+footer{
+    font-size: 12px;
+    text-align: right;
+    padding: 20px;
 }
