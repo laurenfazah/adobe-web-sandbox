@@ -1,7 +1,9 @@
+body{
+    background: $primary;
+}
 .canvas {
     padding-top: 10%;
-    height: 100vh;
-    background: $primary;
+    min-height: 100vh;
     text-align: center;
     input{
         @extend %input;
@@ -21,7 +23,7 @@
         margin-bottom: 20px;
         border: 10px $light solid;
     }
-    a{
+    .edit{
         @extend %input;
         line-height: 40px;
         text-transform: uppercase;
@@ -29,5 +31,15 @@
         letter-spacing: 2px;
         font-size: 14px;
         background: $light;
+        margin-bottom: 50px;
+    }
+    p{
+        font-size: 14px;
+        display: block;
+        margin: 0 auto;
+        background: $light;
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 20px;
     }
 }
