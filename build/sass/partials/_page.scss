@@ -5,6 +5,14 @@ body{
     padding-top: 10%;
     min-height: 100vh;
     text-align: center;
+    label{
+        @extend %message;
+        line-height: 26px;
+        span{
+            display: block;
+            font-weight: 700;
+        }
+    }
     input{
         @extend %input;
         padding: 10px;
@@ -34,12 +42,6 @@ body{
         margin-bottom: 50px;
     }
     p{
-        font-size: 14px;
-        display: block;
-        margin: 0 auto;
-        background: $light;
-        width: 80%;
-        padding: 10px;
-        margin-bottom: 20px;
+        @extend %message;
     }
 }
