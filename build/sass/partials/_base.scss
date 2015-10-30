@@ -18,7 +18,7 @@ $linkedin: #3574af;
 
 $light:#fff;
 $dark: #333;
-$primary: #48bd96;
+$primary: #b7d0c5;
 
 /*//////////////////////////////////////
 //  fonts
@@ -89,6 +89,14 @@ button,input[type="submit"]{
     width:100%;
     margin:0 auto;
     display:block;
+}
+
+%input{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
 }
 
 %marpad{

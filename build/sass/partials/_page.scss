@@ -3,6 +3,17 @@
     height: 100vh;
     background: $primary;
     text-align: center;
+    input{
+        @extend %input;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        text-align: center;
+        &::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+    }
     img{
         max-height: 60%;
         width: auto;
@@ -11,11 +22,7 @@
         border: 10px $light solid;
     }
     a{
-        display: block;
-        margin: 0 auto;
-        width: 200px;
-        height: 40px;
-        border-radius: 10px;
+        @extend %input;
         line-height: 40px;
         text-transform: uppercase;
         text-decoration: none;

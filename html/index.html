@@ -13,13 +13,18 @@
 
         <div class="canvas">
 
-            <img id="editableimage1" src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-0.3.5&q=80&fm=jpg&s=ea7623efb1f5115a216e43130cf1f524" />
+            <form name="submitImgSrc" action="">
+                <input type="text" name="imgSrc" placeholder="image source"/>
+            </form>
 
-            <!-- Add an edit button, passing the HTML id of the image
-                and the public URL to the image -->
-            <a href="#" onclick="return launchEditor('editableimage1',
-                'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-0.3.5&q=80&fm=jpg&s=ea7623efb1f5115a216e43130cf1f524');">Edit</a>
+            <div class="imageArea">
 
+                <img id="editableimage" src="" />
+
+                <a href="#" onclick="return launchEditor('editableimage',
+                    'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-0.3.5&q=80&fm=jpg&s=ea7623efb1f5115a216e43130cf1f524');">Edit</a>
+
+            </div>
 
         </div>
 
@@ -29,6 +34,7 @@
         <script src="js/main.js"></script>
 
         <script>
+
 
             var featherEditor = new Aviary.Feather({
                 apiKey: clientSecret,
